@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|g:\\programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE4AFE18-9DF3-47B5-B20F-038833A69ACB}|StellarWalletClient.csproj|solutionrelative:app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\_Imports.razor",
+              "RelativeDocumentMoniker": "_Imports.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\_Imports.razor",
+              "RelativeToolTip": "_Imports.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:38:36.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:08:21.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\App.razor",
+              "RelativeDocumentMoniker": "App.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\App.razor",
+              "RelativeToolTip": "App.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:03:24.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "Pages\\Counter.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Pages\\Counter.razor",
+              "RelativeToolTip": "Pages\\Counter.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:02:39.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:02:35.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
+              "ToolTip": "G:\\Programming\\my_projects\\personal_projects\\client-stellar-wallet-csharp\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Layout\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T23:02:34.266Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
