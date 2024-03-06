@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StellarWalletClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32870ceb8ed4394667c365750b5ca150d5a02f0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8d359af805b59615ba5ba9a2d676d4da34f5427")]
 [assembly: System.Reflection.AssemblyProductAttribute("StellarWalletClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StellarWalletClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
