@@ -1,0 +1,35 @@
+﻿.homeLayout {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: 60% 40%;
+    min-height: 100vh;
+    background-color: #e1ebf8;
+    text-align: center;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: #5a89d7;
+}
+
+.title {
+    font-size: 150%;
+}
+
+
+@media (max-width: 768px) {
+    .homeLayout {
+        grid-template-columns: 0% 100%;
+    }
+}

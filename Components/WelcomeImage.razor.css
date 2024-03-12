@@ -1,0 +1,9 @@
+﻿.welcome {
+    max-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .welcome {
+        display: none;
+    }
+}

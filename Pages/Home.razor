@@ -1,9 +1,17 @@
 ﻿@* Register.razor *@
+@layout HomeLayout
 
 <PageTitle>Home</PageTitle>
 @page "/"
 
-<SignUpModal />
+<h1 class="mainTitle">Welcome to CRIPPY</h1>
+<p class="slogan">Your best Stellar wallet</p>
+
+<SignIn />
+<br />
+<br />
+<SignUp />
+
 
 @* <button @onclick="OnButtonClick">Llamar a la API</button>
 <p>@apiResponse?.PublicKey</p>

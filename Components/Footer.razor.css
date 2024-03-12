@@ -1,0 +1,52 @@
+﻿.footerContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.brand{
+    font-size: 25px;
+}
+
+.githubLogo {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    fill: white;
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+.link{
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footerContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 3px;
+        justify-items: center;
+    }
+
+    .githubLogo {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+    }
+
+    .brand {
+        font-size: 20px;
+        padding: 2px;
+    }
+
+    .link {
+        font-size: 15px;
+        padding: 2px;
+    }
+}
