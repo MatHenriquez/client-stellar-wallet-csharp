@@ -8,7 +8,9 @@
 *.userosscache
 *.sln.docstates
 *.sln.ide/
-.vs
+.vs/
+**/.vs/
+
 
 # Build / binary files
 [Dd]ebug/
@@ -22,6 +24,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+**/bin/Debug/net8.0/*
+**/obj/Debug/net8.0/*
 
 # Package files
 *.nupkg
