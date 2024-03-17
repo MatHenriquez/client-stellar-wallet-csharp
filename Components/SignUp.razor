@@ -3,7 +3,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<BSModal DataId="model9" Size="Size.Large" IsCentered="true" OnShow="@(() => AddUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
+<BSModal DataId="SignUp" Size="Size.Large" IsCentered="true" OnShow="@(() => AddUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
     <BSForm Model="NewUser" OnValidSubmit="@RegisterUser">
         <DataAnnotationsValidator/>
         <BSModalHeader><span class="modalTitle">Register</span></BSModalHeader>
@@ -30,13 +30,13 @@
             </div>
         </BSModalContent>
         <BSModalFooter>
-            <BSButton Target="model9" Color="BSColor.Danger">Cancel</BSButton>
+            <BSButton Target="SignUp" Color="BSColor.Danger">Cancel</BSButton>
             <BSButton IsSubmit="true" Color="BSColor.Primary">Save</BSButton>
         </BSModalFooter>
     </BSForm>
 </BSModal>
 
-<BSButton Color="BSColor.Primary" IsOutlined="true" Class="w-50 fs-3 shadow-lg" Target="model9">Sign Up</BSButton>
+<BSButton Color="BSColor.Primary" IsOutlined="true" Class="w-50 fs-3 shadow-lg" Target="SignUp">Sign Up</BSButton>
 
 @code {
     BSModal? refModal;
@@ -64,7 +64,8 @@
             var errorContent = await response.Content.ReadAsStringAsync();
             Console.WriteLine(errorContent);
             Console.WriteLine(response);
-            blazorStrap.Toaster.Add("ERROR...", options => {
+            blazorStrap.Toaster.Add("ERROR... " + errorContent, options =>
+            {
                 options.CloseAfter = 5000;
                 options.Color = BSColor.Danger;
             });
