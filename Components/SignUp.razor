@@ -1,30 +1,32 @@
 ﻿<BSToaster/>
 @inject IBlazorStrap blazorStrap
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
-<BSModal DataId="model9" OnShow="@(() => NewUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
-    <BSForm Model="model" OnValidSubmit="@Update">
+<BSModal DataId="model9" Size="Size.Large" IsCentered="true" OnShow="@(() => AddUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
+    <BSForm Model="NewUser" OnValidSubmit="@RegisterUser">
         <DataAnnotationsValidator/>
         <BSModalHeader><span class="modalTitle">Register</span></BSModalHeader>
         <BSModalContent>
             <div class="modalInput">
                 <BSLabel>First Name</BSLabel>
-                <BSInput InputType="InputType.Text" placeholder="John" @bind-Value="model.FirstName" />
-                <BSFeedback For="@(() => model.FirstName)"/>
+                <BSInput InputType="InputType.Text" placeholder="John" @bind-Value="NewUser.Name" />
+                <BSFeedback For="@(() => NewUser.Name)" />
             </div>
             <div class="modalInput">
                 <BSLabel>Last Name</BSLabel>
-                <BSInput InputType="InputType.Text" placeholder="Doe" @bind-Value="model.LastName"/>
-                <BSFeedback For="@(() => model.LastName)" />
+                <BSInput InputType="InputType.Text" placeholder="Doe" @bind-Value="NewUser.LastName" />
+                <BSFeedback For="@(() => NewUser.LastName)" />
             </div>
             <div class="modalInput">
                 <BSLabel>Email address</BSLabel>
-                <BSInput InputType="InputType.Email" placeholder="name@example.com" @bind-Value="model.Email" />
-                <BSFeedback For="@(() => model.Email)" />
+                <BSInput InputType="InputType.Email" placeholder="name@example.com" @bind-Value="NewUser.Email" />
+                <BSFeedback For="@(() => NewUser.Email)" />
             </div>
             <div class="modalInput">
                 <BSLabel>Password</BSLabel>
-                <BSInput InputType="InputType.Password" placeholder="Your password..." @bind-Value="model.Password" />
-                <BSFeedback For="@(() => model.Password)" />
+                <BSInput InputType="InputType.Password" placeholder="Your password..." @bind-Value="NewUser.Password" />
+                <BSFeedback For="@(() => NewUser.Password)" />
             </div>
         </BSModalContent>
         <BSModalFooter>
@@ -38,24 +40,45 @@
 
 @code {
     BSModal? refModal;
-    private User model = new User();
+    private User NewUser = new User();
 
-    private async Task NewUser(User e)
+    private async Task AddUser(User e)
     {
-        model = e; 
+        NewUser = e;
     }
 
-    private async Task Update()
+    private async Task RegisterUser()
     {
-        blazorStrap.Toaster.Add("Fake record added!", options => options.CloseAfter = 5000);
+        var response = await Http.PostAsJsonAsync("http://localhost:5235/User", NewUser);
+        if (response.IsSuccessStatusCode)
+        {            
+            blazorStrap.Toaster.Add("SUCCESS!", options => {
+                options.CloseAfter = 2000;
+                options.Color = BSColor.Success;
+            });
+            await Task.Delay(2000);
+            NavigationManager.NavigateTo("/somepage");
+        }
+        else
+        {
+            var errorContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(errorContent);
+            Console.WriteLine(response);
+            blazorStrap.Toaster.Add("ERROR...", options => {
+                options.CloseAfter = 5000;
+                options.Color = BSColor.Danger;
+            });
+        }
     }
 
     public class User
     {
         [Required(ErrorMessage = "User's First name must be provided.")]
-        public string? FirstName { get; set; }
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "First name must have 6 to 50 characters.")]
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "User's Last name must be provided.")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Last name must have 6 to 50 characters.")]
         public string? LastName { get; set; }
 
         [Required(ErrorMessage = "User's Email address must be provided.")]
@@ -63,6 +86,7 @@
         public string? Email { get; set; }
 
         [Required(ErrorMessage = "Password must be provided.")]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password must have 6 to 50 characters.")]
         public string? Password { get; set; }
     }
 }
