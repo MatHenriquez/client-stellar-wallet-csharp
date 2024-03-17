@@ -1,43 +1,63 @@
-﻿@* <BSToaster/>
-@inject IBlazorStrap blazorStrap
+﻿@inject IBlazorStrap blazorStrap
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
-<BSModal DataId="model8" OnShow="@(() => LoggedUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
-    <BSForm Model="model" OnValidSubmit="@Update">
-        <DataAnnotationsValidator/>
+<BSModal DataId="SignIn" Size="Size.Medium" IsCentered="true" OnShow="@(() => LoggedUser(new User()))" HideOnValidSubmit="true" IsStaticBackdrop="true">
+    <BSForm Model="ToLogUser" OnValidSubmit="@SignInUser">
+        <DataAnnotationsValidator />
         <BSModalHeader><span class="modalTitle">Login</span></BSModalHeader>
         <BSModalContent>
             <div class="modalInput">
                 <BSLabel>Email address</BSLabel>
-                <BSInput InputType="InputType.Email" placeholder="name@example.com" @bind-Value="model.Email" />
-                <BSFeedback For="@(() => model.Email)" />
+                <BSInput InputType="InputType.Email" placeholder="name@example.com" @bind-Value="ToLogUser.Email" />
+                <BSFeedback For="@(() => ToLogUser.Email)" />
             </div>
             <div class="modalInput">
                 <BSLabel>Password</BSLabel>
-                <BSInput InputType="InputType.Password" placeholder="Your password..." @bind-Value="model.Password" />
-                <BSFeedback For="@(() => model.Password)" />
+                <BSInput InputType="InputType.Password" placeholder="Your password..." @bind-Value="ToLogUser.Password" />
+                <BSFeedback For="@(() => ToLogUser.Password)" />
             </div>
         </BSModalContent>
         <BSModalFooter>
-            <BSButton Target="model8" Color="BSColor.Danger">Cancel</BSButton>
+            <BSButton Target="SignIn" Color="BSColor.Danger">Cancel</BSButton>
             <BSButton IsSubmit="true" Color="BSColor.Primary">Save</BSButton>
         </BSModalFooter>
     </BSForm>
 </BSModal>
 
-<BSButton Color="BSColor.Primary" IsOutlined="true" Class="w-50 fs-3 shadow-lg" Target="model9">Sign In</BSButton>
+<BSButton Color="BSColor.Primary" IsOutlined="true" Class="w-50 fs-3 shadow-lg" Target="SignIn">Sign In</BSButton>
 
 @code {
     BSModal? refModal;
-    private User model = new User();
+    private User ToLogUser = new User();
 
-    private async Task LoggedUser(User e)
+    private async Task LoggedUser(User _){}
+    
+    private async Task SignInUser()
     {
-        model = e; 
-    }
-
-    private async Task Update()
-    {
-        blazorStrap.Toaster.Add("Fake record added!", options => options.CloseAfter = 5000);
+        var response = await Http.PostAsJsonAsync("http://localhost:5235/Login", ToLogUser);
+        Console.WriteLine("afsgs" + response.Content);
+        if (response.IsSuccessStatusCode)
+        {
+            blazorStrap.Toaster.Add("SUCCESS!", options =>
+            {
+                options.CloseAfter = 2000;
+                options.Color = BSColor.Success;
+            });
+            await Task.Delay(2000);
+            NavigationManager.NavigateTo("/somepage");
+        }
+        else
+        {
+            var errorContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(errorContent);
+            Console.WriteLine(response);
+            blazorStrap.Toaster.Add("ERROR... " + errorContent, options =>
+            {
+                options.CloseAfter = 5000;
+                options.Color = BSColor.Danger;
+            });
+        }
     }
 
     public class User
@@ -50,4 +70,4 @@
         [StringLength(50, MinimumLength = 8, ErrorMessage = "Password must have 6 to 50 characters.")]
         public string? Password { get; set; }
     }
-} *@
+}
