@@ -1,5 +1,7 @@
 ﻿.welcome {
+    min-height: 100vh;
     max-height: 100vh;
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {

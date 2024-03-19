@@ -4,45 +4,16 @@
 <PageTitle>Home</PageTitle>
 @page "/"
 
-<h1 class="mainTitle">Welcome to CRIPPY</h1>
-<p class="slogan">Your best Stellar wallet</p>
-
-<SignIn />
-<br />
-<br />
-<SignUp />
-
-
-@* <button @onclick="OnButtonClick">Llamar a la API</button>
-<p>@apiResponse?.PublicKey</p>
-<p>@apiResponse?.SecretKey</p> *@
-
-@code {
-    private ApiResponse? apiResponse;
-
-    private async Task OnButtonClick()
-    {
-        // Define la URL de la API
-        var url = "http://localhost:5235/Transaction/AccountCreation";
-
-        // Crea un objeto HttpClient
-        var httpClient = new HttpClient();
-
-        // Realiza la solicitud HTTP a la API
-        var response = await httpClient.GetAsync(url);
-
-        // Deserializa la respuesta JSON
-        var result = await response.Content.ReadAsStringAsync();
-
-        apiResponse = JsonConvert.DeserializeObject<ApiResponse>(result);
-
-        // Muestra los datos de la respuesta al usuario
-        Console.WriteLine(result);
-    }
-
-    public partial class ApiResponse(string publicKey, string secretKey) : ComponentBase
-    {
-        public string PublicKey { get; set; } = publicKey;
-        public string SecretKey { get; set; } = secretKey;
-    }
-}
+<div class="container">
+    <div class="two alt-two">
+        <h1 class="title">
+            Welcome to CRIPPY
+            <span>YOUR STELLAR BEST FRIEND</span>
+        </h1>
+    </div>
+    <div class="btn-container">
+        <SignIn />
+        <br />
+        <SignUp />
+    </div>    
+</div>
